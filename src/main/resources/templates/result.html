@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Suncode</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/style.css" th:href="@{/static/style.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <p th:text="${column}"/>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>kolumna1</th>
+            <th>kolumna2</th>
+            <th>kolumna3</th>
+            <th>kolumna4</th>
+        </tr>
+        <div th:each="el:${columns}">
+            <tr>
+                <td> <span th:text="${el.id}"/></td>
+                <td> <span th:text="${el.kolumna1}"/></td>
+                <td> <span th:text="${el.kolumna2}"/></td>
+                <td> <span th:text="${el.kolumna3}"/></td>
+                <td> <span th:text="${el.kolumna4}"/></td>
+            </tr>
+        </div>
+    </table>
+</body>
+</html>

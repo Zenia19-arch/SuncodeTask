@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Suncode</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/style.css" th:href="@{/static/style.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<form th:action="@{/result}" method="post">
+    <select name="column"
+            placeholder="Select column" class="form-select">
+        <option th:value="${column}" th:each="column : ${columns}" th:text="${column}">Select column</option>
+    </select>
+
+    <select name="option"
+            placeholder="Select option" class="form-select">
+        <option value="unique">See unique columns</option>
+        <option value="duplicate">See duplicate columns</option>
+    </select>
+
+    <div>
+        <br>
+        <button type="submit">Choose</button>
+    </div>
+</form>
+
+</body>
+</html>
